@@ -1,0 +1,211 @@
+{
+    "tabnine.experimentalAutoImports": true,
+    "bracketPairColorizer.forceIterationColorCycle": true,
+    "powermode.maxExplosions": 10,
+    "liveshare.presence": true,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "jupyter.sendSelectionToInteractiveWindow": true,
+    "extensions.ignoreRecommendations": true,
+    "liveshare.authenticationProvider": "GitHub",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。　，．",
+
+    "[tex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+
+    "[latex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+
+    "[bibtex]": {
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+
+
+    // ---------- LaTeX Workshop ----------
+
+    // 使用パッケージのコマンドや環境の補完を有効にする
+    "latex-workshop.intellisense.package.enabled": true,
+
+    // 生成ファイルを削除するときに対象とするファイル
+    // デフォルト値に "*.synctex.gz" を追加
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+
+    // 生成ファイルを "out" ディレクトリに吐き出す
+    "latex-workshop.latex.outDir": "out",
+
+    // ビルドのレシピ
+    "latex-workshop.latex.recipes": [
+        
+        // LaTeX(pLaTeX) で書かれた文書のビルドレシピ
+        {
+            "name": "ptex2pdf",
+            "tools": [
+                "ptex2pdf"
+            ]
+        }
+    ],
+
+    // ビルドのレシピに使われるパーツ
+    "latex-workshop.latex.tools": [
+        {
+            // latexmk を利用した xelatex によるビルドコマンド
+            "name": "Latexmk (XeLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        // latexmk を利用した uplatex によるビルドコマンド
+        {
+            "name": "Latexmk (upLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        // latexmk を利用した platex によるビルドコマンド
+        // 古い LaTeX のテンプレートを使いまわしている (ドキュメントクラスが jreport や jsreport ) 場合のため
+        {
+            "name": "Latexmk (pLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-latex='platex'",
+                "-latexoption='-kanji=utf8 -no-guess-input-env'",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        // latexmk を利用した lualatex によるビルドコマンド
+        {
+            "name": "Latexmk (LuaLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-lualatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "ptex2pdf",
+            "command": "ptex2pdf",
+            "args": [
+                "-l",
+                "-interaction=nonstopmode",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "python.showStartPage": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 1000,
+    "python.linting.lintOnSave": true,
+    "python.linting.flake8Args": [
+        "--ignore=W293, W504",
+        "--max-line-length=80",
+    ],
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--aggressive", "--aggressive",
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "glassit-linux.opacity": 90,
+    "explorer.confirmDragAndDrop": false,
+    "powermode.enabled": true,
+    "powermode.presets": "fireworks",
+    "powermode.enableStatusBarComboTimer": false,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true
+    },
+    "powermode.combo.threshold": 3,
+    "powermode.combo.timeout": 3,
+    "powermode.combo.location": "statusbar",
+    "powermode.combo.counterEnabled": "hide",
+    "powermode.combo.timerEnabled": "hide",
+    "powermode.shake.intensity": 0,
+    "powermode.explosions.size": 4,
+    "powermode.explosions.offset": 0.3,
+    "powermode.explosions.backgroundMode": "image",
+    "markdown.marp.enableHtml": true,
+    "hediet.vscode-drawio.theme": "Kennedy",
+    "editor.rulers": [
+        80
+    ],
+    "[python]": {
+    
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 1,
+    "javascript.format.enable": false
+}
